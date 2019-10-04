@@ -22,7 +22,7 @@ pub fn solve(input: &str) -> Option<HashMap<char, u8>> {
 
     for nums in NumGeneratorIter::new() {
         let chars = chars.clone();
-        let hash = chars.iter().cloned().zip(nums.iter().cloned()).collect();
+        let hash = chars.iter().cloned().zip(nums.iter().rev().cloned()).collect();
 
         if valid_solution(&input, &hash) {
             return Some(hash);
